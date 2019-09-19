@@ -141,11 +141,13 @@ TCP是为流量设计的（每秒内可以传输多少KB的数据），讲究的
 
 - [kcptun](https://github.com/xtaci/kcptun): 基于 kcp-go做的高速远程端口转发(隧道) ，配合ssh -D，可以比 shadowsocks 更流畅的看在线视频。
 - [dog-tunnel](https://github.com/vzex/dog-tunnel): GO开发的网络隧道，使用 KCP极大的改进了传输速度，并移植了一份 GO版本 KCP
-- [v2ray](https://www.v2ray.com)：著名代理软件，Shadowsocks 代替者，1.17后集成了 kcp协议，使用UDP传输，无数据包特征。
-- [HP-Socket](https://github.com/ldcsaa/HP-Socket)：高性能网络通信框架 HP-Socket。
+- [v2ray](https://www.v2ray.com): 著名代理软件，Shadowsocks 代替者，1.17后集成了 kcp协议，使用UDP传输，无数据包特征。
+- [HP-Socket](https://github.com/ldcsaa/HP-Socket): 高性能网络通信框架 HP-Socket。
+- [frp](https://github.com/fatedier/frp): 高性能内网穿透的反向代理软件，可将将内网服务暴露映射到外网服务器。
 - [asio-kcp](https://github.com/libinzhangyuan/asio_kcp): 使用 KCP的完整 UDP网络库，完整实现了基于 UDP的链接状态管理，会话控制，KCP协议调度等
-- [kcp-java](https://github.com/hkspirt/kcp-java)：Java版本 KCP协议实现。
-- [kcp-netty](https://github.com/szhnet/kcp-netty)：kcp的Java语言实现，基于netty。
+- [kcp-java](https://github.com/hkspirt/kcp-java): Java版本 KCP协议实现。
+- [kcp-netty](https://github.com/szhnet/kcp-netty): kcp的Java语言实现，基于netty。
+- [java-kcp](https://github.com/l42111996/java-Kcp): JAVA版本KCP,基于netty实现(包含fec功能)
 - [kcp-go](https://github.com/xtaci/kcp-go): 高安全性的kcp的 GO语言实现，包含 UDP会话管理的简单实现，可以作为后续开发的基础库。 
 - [kcp-csharp](https://github.com/limpo1989/kcp-csharp): kcp的 csharp移植，同时包含一份回话管理，可以连接上面kcp-go的服务端。
 - [kcp-csharp](https://github.com/KumoKyaku/KCP): 新版本 Kcp的 csharp移植。线程安全，运行时无alloc，对gc无压力。
@@ -169,6 +171,7 @@ TCP是为流量设计的（每秒内可以传输多少KB的数据），讲究的
 - [CC](http://cc.163.com/)：网易 CC 使用 kcp 加速视频推流，有效提高流畅性
 - [BOBO](http://bobo.163.com/)：网易 BOBO 使用 kcp 加速主播推流
 - [云帆加速](http://www.yfcloud.com/)：使用 KCP 加速文件传输和视频推流，优化了台湾主播推流的流畅度
+- [SpatialOS](https://improbable.io/spatialOS): 大型多人分布式游戏服务端引擎，BigWorld 的后继者，使用 KCP 加速数据传输。
 
 欢迎告知更多案例
 
@@ -190,12 +193,21 @@ TCP是为流量设计的（每秒内可以传输多少KB的数据），讲究的
 
 具体见：[横向比较](https://github.com/libinzhangyuan/reliable_udp_bench_mark) 和 [评测数据](https://github.com/skywind3000/kcp/wiki/KCP-Benchmark)，为犹豫选择的人提供了更多指引。
 
+大型多人游戏服务端引擎 [SpatialOS](https://improbable.io/spatialOS) 在集成 KCP 协议后做了同 TCP/RakNet 的评测：
 
+![](https://raw.githubusercontent.com/skywind3000/kcp/master/images/spatialos-50.png)
 
+对比了在服务端刷新率为 60 Hz 同时维护 50 个角色时的响应时间，详细对比报告见：
+
+- [Kcp a new low latency secure network stack](https://improbable.io/blog/kcp-a-new-low-latency-secure-network-stack)
+
+# 项目历史
+
+See [Success Stories](https://github.com/skywind3000/kcp/wiki/Success-Stories).
 
 # 欢迎捐赠
 
-![欢迎使用支付宝对该项目进行捐赠](https://raw.githubusercontent.com/skywind3000/kcp/master/donation.png)
+![欢迎使用支付宝对该项目进行捐赠](https://raw.githubusercontent.com/skywind3000/kcp/master/images/donation.png)
 
 欢迎使用支付宝手扫描上面的二维码，对该项目进行捐赠。捐赠款项将用于持续优化 KCP协议以及完善文档。
 
@@ -211,7 +223,7 @@ blog: http://www.skywind.me
 
 zhihu: https://www.zhihu.com/people/skywind3000
 
-
+twitter: [https://twitter.com/skywind3000](https://twitter.com/skywind3000)
 
 
 ## Contributors

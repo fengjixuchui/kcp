@@ -882,7 +882,11 @@ int ikcp_input(ikcpcb *kcp, const char *data, long size)
 				if (kcp->incr < mss) kcp->incr = mss;
 				kcp->incr += (mss * mss) / kcp->incr + (mss / 16);
 				if ((kcp->cwnd + 1) * mss <= kcp->incr) {
+				#if 1
+					kcp->cwnd = (kcp->incr + mss - 1) / ((mss > 0)? mss : 1);
+				#else
 					kcp->cwnd++;
+				#endif
 				}
 			}
 			if (kcp->cwnd > kcp->rmt_wnd) {
@@ -1056,9 +1060,11 @@ void ikcp_flush(ikcpcb *kcp)
 			segment->xmit++;
 			kcp->xmit++;
 			if (kcp->nodelay == 0) {
-				segment->rto += kcp->rx_rto;
+				segment->rto += _imax_(segment->rto, (IUINT32)kcp->rx_rto);
 			}	else {
-				segment->rto += kcp->rx_rto / 2;
+				IINT32 step = (kcp->nodelay < 2)? 
+					((IINT32)(segment->rto)) : kcp->rx_rto;
+				segment->rto += step / 2;
 			}
 			segment->resendts = current + segment->rto;
 			lost = 1;

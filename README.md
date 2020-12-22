@@ -160,6 +160,7 @@ vcpkg中的kcp库由Microsoft团队成员和社区贡献者保持最新状态。
 - [kcp-java](https://github.com/hkspirt/kcp-java): Java版本 KCP协议实现。
 - [kcp-netty](https://github.com/szhnet/kcp-netty): kcp的Java语言实现，基于netty。
 - [java-kcp](https://github.com/l42111996/java-Kcp): JAVA版本KCP,基于netty实现(包含fec功能)
+- [csharp-kcp](https://github.com/l42111996/csharp-kcp): csharp版本KCP,基于dotNetty实现(包含fec功能)
 - [kcp-go](https://github.com/xtaci/kcp-go): 高安全性的kcp的 GO语言实现，包含 UDP会话管理的简单实现，可以作为后续开发的基础库。 
 - [kcp-csharp](https://github.com/limpo1989/kcp-csharp): kcp的 csharp移植，同时包含一份回话管理，可以连接上面kcp-go的服务端。
 - [kcp-csharp](https://github.com/KumoKyaku/KCP): 新版本 Kcp的 csharp移植。线程安全，运行时无alloc，对gc无压力。
@@ -175,6 +176,8 @@ vcpkg中的kcp库由Microsoft团队成员和社区贡献者保持最新状态。
 - [rpcx](https://github.com/smallnest/rpcx) ：RPC 框架，1000+ 星，使用 kcpgo 加速 RPC
 - [xkcptun](https://github.com/liudf0716/xkcptun): c语言实现的kcptun，主要用于[OpenWrt](https://github.com/openwrt/openwrt), [LEDE](https://github.com/lede-project/source)开发的路由器项目上
 - [et-frame](https://github.com/egametang/ET): C#前后端框架(前端unity3d)，统一用C#开发游戏，实现了前后端kcp协议
+- [yasio](https://github.com/yasio/yasio): 一个跨平台专注于任意客户端程序的异步socket库, 易于使用，相同的API操作KCP/TCP/UDP, 性能测试结果: [benchmark-pump](https://github.com/yasio/yasio/blob/master/benchmark.md).
+- [gouxp](https://github.com/shaoyuan1943/gouxp): 用Go实现基于回调方式的KCP开发包，包含加解密和FEC支持，简单易用。  
 
 # 商业案例
 
@@ -233,7 +236,7 @@ For more information, please see the [Success Stories](https://github.com/skywin
 
 我在多年的开发经历中，一直都喜欢研究解决程序中的一些瓶颈问题，早年喜欢游戏开发，照着《VGA编程》来做游戏图形，读 Michael Abrash 的《图形程序开发人员指南》做软渲染器，爱好摆弄一些能够榨干 CPU 能够运行更快的代码，参加工作后，兴趣转移到服务端和网络相关的技术。
 
-2007 年时做了几个传统游戏后开始研究快速动作游戏的同步问题，期间写过不少文章，算是国内比较早研究同步问题的人，然而发现不管怎么解决同步都需要在网络传输方面有所突破，后来离开游戏转行互联网后也发现不少领域有这方面的需求，于是开始花时间在网络传输这个领域上，尝试基于 UDP 实现一些保守的可靠协议，反照 BSD Lite 4.4 的代码实现一些类 TCP 协议，觉得比较有意思，又接着实现一些 P2P 和动态路由网相关的玩具。KCP 协议诞生于 2011 年，基本算是自己传输方面做的几个玩具中的一个。
+2007 年时做了几个传统游戏后开始研究快速动作游戏的同步问题，期间写过不少文章，算是国内比较早研究同步问题的人，然而发现不管怎么解决同步都需要在网络传输方面有所突破，后来离开游戏转行互联网后也发现不少领域有这方面的需求，于是开始花时间在网络传输这个领域上，尝试基于 UDP 实现一些保守的可靠协议，仿照 BSD Lite 4.4 的代码实现一些类 TCP 协议，觉得比较有意思，又接着实现一些 P2P 和动态路由网相关的玩具。KCP 协议诞生于 2011 年，基本算是自己传输方面做的几个玩具中的一个。
 
 Kcptun 的作者 xtaci 是我的大学同学，我俩都是学通信的，经常在一起研究如何进行传输优化。
 
